@@ -2,7 +2,10 @@
     <string name="app_name">JetpackNotes</string>
 
     <string name="button_create">CRIAR NOTA</string>
+    <string name="button_enter">ENTRAR</string>
 
     <string name="hint_description">O que devo fazer?</string>
     <string name="hint_title">Título</string>
+
+    <string name="label_author">Por: André Ikeda\nEmail para contato: andreikeda87@gmail.com</string>
 </resources>
