@@ -39,6 +39,7 @@ ext {
     versionName = '1.0.0'
     applicationId = 'br.com.andreikeda.jetpacknotes'
 
+    ankoVersion='0.10.7'
     archVersion = '2.1.0' + '-alpha01'
     archExtVersion = '2.0.0' + '-rc01'
     constraintVersion = '1.1.3'
