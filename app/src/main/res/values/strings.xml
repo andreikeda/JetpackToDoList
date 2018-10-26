@@ -4,6 +4,8 @@
     <string name="button_create">CRIAR NOTA</string>
     <string name="button_enter">ENTRAR</string>
 
+    <string name="formatted_description">Descrição: %s</string>
+
     <string name="hint_description">O que devo fazer?</string>
     <string name="hint_title">Título</string>
 

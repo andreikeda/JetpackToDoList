@@ -12,13 +12,13 @@
 
     <TextView
             android:id="@+id/textView_title" android:layout_width="0dp" android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/view_margin"
+            android:textSize="@dimen/font_medium" android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@id/checkBox_completed"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@id/textView_description"/>
 
     <TextView
-            android:id="@+id/textView_description" android:layout_width="0dp" android:layout_height="0dp"
-            app:layout_constraintEnd_toStartOf="@id/checkBox_completed" app:layout_constraintTop_toBottomOf="@id/textView_title"
+            android:id="@+id/textView_description" android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/checkBox_completed" app:layout_constraintTop_toBottomOf="@id/textView_title"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

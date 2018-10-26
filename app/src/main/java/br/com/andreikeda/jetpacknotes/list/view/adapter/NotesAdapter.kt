@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.andreikeda.jetpacknotes.R
 import br.com.andreikeda.jetpacknotes.core.room.entity.NoteEntity
 
-class NotesAdapter(context: Context) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter(val context: Context) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
     private var mNotes: List<NoteEntity>? = null
@@ -33,7 +33,7 @@ class NotesAdapter(context: Context) : RecyclerView.Adapter<NotesAdapter.NotesVi
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         mNotes?.get(position)?.let {
             holder.isFinishedItemVew.isChecked = it.isFinished
-            holder.descriptionItemView.text = it.description
+            holder.descriptionItemView.text = context.getString(R.string.formatted_description, it.description)
             holder.titleItemView.text = it.name
         } ?: run {
             Log.i("Teste", "something wrong happened")
@@ -42,7 +42,7 @@ class NotesAdapter(context: Context) : RecyclerView.Adapter<NotesAdapter.NotesVi
 
     class NotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val isFinishedItemVew = itemView.findViewById<CheckBox>(R.id.checkBox_completed)
-        val descriptionItemView = itemView.findViewById<TextView>(R.id.textView_title)
-        val titleItemView = itemView.findViewById<TextView>(R.id.textView_description)
+        val descriptionItemView = itemView.findViewById<TextView>(R.id.textView_description)
+        val titleItemView = itemView.findViewById<TextView>(R.id.textView_title)
     }
 }
