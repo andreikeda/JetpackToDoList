@@ -1,8 +1,8 @@
 package br.com.andreikeda.jetpacknotes.list.interactor
 
-import android.app.Application
+import br.com.andreikeda.jetpacknotes.core.NoteViewModel
 
 interface NotesInteractor {
-    fun getAllNotes(application: Application)
+    fun getAllNotes(viewModel: NoteViewModel?)
     fun unregister()
 }

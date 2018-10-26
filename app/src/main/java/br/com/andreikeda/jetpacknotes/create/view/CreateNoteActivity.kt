@@ -12,7 +12,7 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class CreateNoteActivity : AppCompatActivity(), CreateNoteView {
 
-    private var presenter: CreateNotePresenter? = CreateNotePresenterImpl(this)
+    private var presenter: CreateNotePresenter? = null
 
     override fun configureViews() {
         button_create.onClick {

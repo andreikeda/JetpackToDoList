@@ -5,14 +5,14 @@ import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
 import br.com.andreikeda.jetpacknotes.core.room.entity.NoteEntity
 
-private const val QUERY_DELETE_ALL = "delete from notes"
-private const val QUERY_SELECT_ALL = "select * from notes ORDER BY time_in_millis DESC"
+private const val QUERY_DELETE_ALL = "delete from notes_table"
+private const val QUERY_SELECT_ALL = "select * from notes_table ORDER BY time_in_millis DESC"
 
 @Dao
 interface NoteDao {
 
     @Insert(onConflict = REPLACE)
-    fun createNote(note: NoteEntity)
+    fun createNote(note: NoteEntity) : Long
 
     @Delete
     fun deleteNote(note: NoteEntity)
@@ -24,6 +24,6 @@ interface NoteDao {
     fun getAllNotes() : LiveData<List<NoteEntity>>
 
     @Update
-    fun updateNote(note: NoteEntity)
+    fun updateNote(note: NoteEntity) : Int
 
 }

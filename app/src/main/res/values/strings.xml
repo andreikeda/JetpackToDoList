@@ -8,4 +8,6 @@
     <string name="hint_title">Título</string>
 
     <string name="label_author">Por: André Ikeda\nEmail para contato: andreikeda87@gmail.com</string>
+
+    <string name="success_note_created">Nota criada com sucesso.</string>
 </resources>

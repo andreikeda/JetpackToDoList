@@ -1,6 +1,7 @@
 package br.com.andreikeda.jetpacknotes.list.view.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +36,7 @@ class NotesAdapter(context: Context) : RecyclerView.Adapter<NotesAdapter.NotesVi
             holder.descriptionItemView.text = it.description
             holder.titleItemView.text = it.name
         } ?: run {
-
+            Log.i("Teste", "something wrong happened")
         }
     }
 
