@@ -71,7 +71,7 @@ class NotesActivity : AppCompatActivity(), NotesView {
 
     override fun setAdapter(notes: LiveData<List<NoteEntity>>) {
         notes.observe(this, Observer<List<NoteEntity>> {
-            val adapter = NotesAdapter(this)
+            val adapter = NotesAdapter(this, presenter)
             adapter.setData(it)
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(this)

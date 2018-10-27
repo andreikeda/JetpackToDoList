@@ -31,6 +31,11 @@ class NotesPresenterImpl(var view: NotesView?) : NotesPresenter, NotesInteractor
         router?.goToCreateNoteScreen()
     }
 
+    override fun onChangedNoteChecked(note: NoteEntity, isChecked: Boolean) {
+        note.isFinished = isChecked
+        interactor?.updateNote(noteViewModel, note)
+    }
+
     override fun unregister() {
         interactor?.unregister()
         interactor = null

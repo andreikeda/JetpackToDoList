@@ -10,8 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.andreikeda.jetpacknotes.R
 import br.com.andreikeda.jetpacknotes.core.room.entity.NoteEntity
+import br.com.andreikeda.jetpacknotes.list.presenter.NotesPresenter
+import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
 
-class NotesAdapter(val context: Context) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter(val context: Context, val presenter: NotesPresenter?) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
     private var mNotes: List<NoteEntity>? = null
@@ -33,6 +35,7 @@ class NotesAdapter(val context: Context) : RecyclerView.Adapter<NotesAdapter.Not
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         mNotes?.get(position)?.let {
             holder.isFinishedItemVew.isChecked = it.isFinished
+            holder.isFinishedItemVew.onCheckedChange { _, isChecked -> presenter?.onChangedNoteChecked(it, isChecked) }
             holder.descriptionItemView.text = context.getString(R.string.formatted_description, it.description)
             holder.titleItemView.text = it.name
         } ?: run {

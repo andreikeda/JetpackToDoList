@@ -9,7 +9,6 @@ import br.com.andreikeda.jetpacknotes.core.NoteViewModel
 import org.jetbrains.anko.doAsync
 
 class NoteRepositoryImpl(application: Application) : NoteViewModel {
-
     private val noteDao: NoteDao? = AppDatabase.getDatabase(application)?.getNoteDao()
     private val mAllNotes: LiveData<List<NoteEntity>>? = noteDao?.getAllNotes()
 
@@ -40,5 +39,4 @@ class NoteRepositoryImpl(application: Application) : NoteViewModel {
             noteDao?.updateNote(note)
         }
     }
-
 }
